@@ -4,7 +4,7 @@ const RestroCard = ({img,name,cuisines})=>{
         width:"200px"
     }
     return (
-        <div className="flex flex-column grid-gap-5 p10" st yle={cardStyle}>
+        <div className="flex flex-column grid-gap-5 p10" style={cardStyle}>
             <img src={img} width="200px"></img>
                 <p>{name}</p>
                 <p>{...cuisines.join(", ")}</p>
