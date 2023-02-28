@@ -5,7 +5,7 @@ const SearchBar = ({search,setSearch})=>{
     
     return(
         <input type="text" value={search} onChange={(e)=>{
-            setSearch(e.value);
+            setSearch(e.target.value);
         }}/>
     )
 }

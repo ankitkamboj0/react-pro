@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom"
 const Header = ()=>{
     return(
         <div className="flex space-between header">
@@ -7,9 +8,15 @@ const Header = ()=>{
             </div>
            
             <ul className="listUnstyle flex grid-gap-5">
-                <li>Home</li>
-                <li>Home 1</li>
-                <li>Home 2</li>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+                <li>
+                    <Link to="/contact">contact</Link>
+                </li>
             </ul>        
         </div>
     )
