@@ -87,6 +87,9 @@
 .header{
     background-color: aliceblue;
     padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 .header img{
     width: 100px;
@@ -97,6 +100,78 @@
 .grid-gap-5{
     grid-gap: 10px;
 }
+.grid-gap-20{
+  grid-gap: 20px;
+}
 .p10{
   padding: 10px;
 }
+.p20{
+  padding: 20px;
+}
+
+.shimmer-card {
+  position: relative;
+  -webkit-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  background-color: #FFF;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 350px;
+
+.shimmerBg {
+  animation-duration: 2.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: #E5F0FB;
+  background: linear-gradient(to right, #f3f3f3 4%, #e2e2e2 25%, #e6e6e6 36%) 0 0 / 1200px 100%;
+  background-size: 1200px 100%;
+}
+.shimmer-lines{
+  margin-top: 20px;
+    padding: 20px;
+}
+@-webkit-keyframes shimmer {
+  0% {
+      background-position: -100% 0;
+  }
+  100% {
+      background-position: 100% 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+      background-position: -1200px 0;
+  }
+  100% {
+      background-position: 1200px 0;
+  }
+}
+
+.media {
+  height: 200px;
+}
+.title-line {
+  height: 24px;
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 20px;
+}
+
+.content-line {
+  height: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.end {
+    width: 40%;
+  }
+
+}
+
+

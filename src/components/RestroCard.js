@@ -1,16 +1,20 @@
 import {imgUrl} from "common/config";
+import { Link } from "react-router-dom"
 
-const RestroCard = ({cloudinaryImageId,name,cuisines})=>{
+const RestroCard = ({cloudinaryImageId,name,cuisines,id})=>{
     const cardStyle = {
-        border:"1px solid #000",
-        width:"200px"
+        width:"350px"
     }
     const img = imgUrl+"/"+cloudinaryImageId;
     return (
-        <div className="flex flex-column grid-gap-5 p10" style={cardStyle}>
-            <img src={img} width="200px"></img>
-                <p>{name}</p>
-                <p>{cuisines?.join(", ")}</p>
+        <div className="flex flex-column shimmer-card" style={cardStyle}>
+            <Link to={`/card-detail/${id}`}>    
+                <img src={img}></img>
+                <div className="p20">
+                    <p>{name}</p>
+                    <p>{cuisines?.join(", ")}</p>
+                </div>
+            </Link>
         </div>
     )
 }

@@ -12,7 +12,9 @@ const AppLayout = ()=>{
     return (
         <>
             <Header />
-            <Outlet />
+            <div className="p20">
+                <Outlet />
+            </div>
         </>
     )
 }

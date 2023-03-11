@@ -2,24 +2,33 @@ import { useEffect, useState } from "react"
 import RestroCard from "components/RestroCard"
 import SearchBar from "components/Search"
 import {URL} from "common/config"
-import { Link } from "react-router-dom"
-
+import Shimmer from "components/Shimmer"
 const Home = () =>{
     const [search,setSearch] = useState("");
     const [restroData,setRestroData] = useState(null);
     const [filteredData,setFilterData] = useState(null);
+    const checkLocationOfData = (data)=>{
+        try {
+            const index = data.cards.findIndex((card)=>card.cardType == 'seeAllRestaurants');  
+            return data?.cards[index].data.data.cards
+        } catch (error) {
+            console.log(error)
+            return []
+        }
+    }
 
     const  getData = async()=>{
         try {
             await fetch(URL).then((data)=>data.json()).then(({data})=>{
-                setRestroData(data?.cards[0].data?.data?.cards);
-                setFilterData(data?.cards[0].data?.data?.cards);
-                console.log("our data",data?.cards[0].data?.data?.cards);
+                setRestroData(checkLocationOfData(data));
+                setFilterData(checkLocationOfData(data));
             });
         } catch (error) {
             console.table(error)
         }
     }
+
+
 
     useEffect(()=>{
         getData();
@@ -36,13 +45,11 @@ const Home = () =>{
         filteredData ?
         <>
             <SearchBar search={search} setSearch={setSearch} />
-            <div className="flex grid-gap-5 p10 flex-wrap">
+            <div className="flex grid-gap-20 p10 flex-wrap">
                 {
                     filteredData.map((restro,index)=>{
                         return(
-                            <Link to={`/card-detail/${restro.data.id}`} key={index}>    
-                                <RestroCard {...restro.data} />
-                            </Link>
+                            <RestroCard key={index} {...restro.data} />
                         )
                     })
                 }
@@ -50,7 +57,7 @@ const Home = () =>{
         </>
         : 
         <>
-        NO DATA
+        <Shimmer lengthOfBlocks={12} />
         </>
     )
 }
