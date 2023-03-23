@@ -1,0 +1,1 @@
+{"mappings":"6YAAA,IAAAA,EAAAC,EAAA,S,IAGAC,EAHgB,KACP,EAAAF,EAAAG,KAAC,O,SAAI,wB","sources":["src/components/Contact.js"],"sourcesContent":["const Contact = () => {\n  return <div>This is contact page</div>;\n};\nexport default Contact;\n"],"names":["$ayMG0","parcelRequire","$18129c3b87767e8f$export$2e2bcd8739ae039","jsx"],"version":3,"file":"Contact.cae189df.js.map"}
