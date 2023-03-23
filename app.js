@@ -1,12 +1,14 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM  from "react-dom/client";
 import Header from "components/Header";
 import Home from "components/Home";
 import About from "components/About";
-import Contact from "components/Contact";
 import ErrorPage from "components/ErrorPage";
+import "./index.scss";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
-import CardDetail from "./src/components/CardDetail";
+import Shimmer from "components/Shimmer";
+const Contact = lazy(()=>import("components/Contact"))
+const CardDetail = lazy(()=> import("components/CardDetail"))
 
 const AppLayout = ()=>{
     return (
@@ -30,10 +32,12 @@ const appRouter = createBrowserRouter([{
         element: <About />,
     },{
         path:"/contact",
-        element: <Contact />,
+        element: <Suspense><Contact /></Suspense>,
     },{
         path:"/card-detail/:id",
-        element:<CardDetail/>
+        element:(<Suspense fallback={<Shimmer/>}>
+            <CardDetail/>
+        </Suspense>)
     }]
 }])
 
