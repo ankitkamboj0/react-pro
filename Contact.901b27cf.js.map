@@ -1,0 +1,1 @@
+{"mappings":"8SAEE,IAAAA,EAFcC,KACP,EAAAC,OAAP,OAAOC,SAAK,yBAEQC,UAAAC,QAAAL,C","sources":["src/components/Contact.js"],"sourcesContent":["const Contact = () => {\n  return <div>This is contact page</div>;\n};\nexport default Contact;\n"],"names":["_default","Contact","_jsxRuntime","children","exports","default"],"version":3,"file":"Contact.901b27cf.js.map"}
