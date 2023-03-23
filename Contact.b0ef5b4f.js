@@ -1,0 +1,2 @@
+("undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{}).parcelRequirec64e.register("248A0",(function(e,t){Object.defineProperty(e.exports,"__esModule",{value:!0}),e.exports.default=void 0;var n=function(){return React.createElement("div",null,"This is contact page")};e.exports.default=n}));
+//# sourceMappingURL=Contact.b0ef5b4f.js.map

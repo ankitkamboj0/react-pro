@@ -1,0 +1,1 @@
+{"mappings":"qRAAA,IAEEA,EAFc,WACd,OAAOC,MAAAC,cAAA,WAAK,uBACd,EACsBC,UAAA,QAAAH,C","sources":["src/components/Contact.js"],"sourcesContent":["const Contact = () => {\n  return <div>This is contact page</div>;\n};\nexport default Contact;\n"],"names":["_default","React","createElement","exports"],"version":3,"file":"Contact.b0ef5b4f.js.map"}
