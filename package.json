@@ -4,20 +4,22 @@
   "description": "This is personal project",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --public-url './'",
     "format": "prettier --write src/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ankitkamboj0/react-pro.git"
+    "url": "git+ssh://github.com/ankitkamboj0/react-pro.git"
   },
   "author": "Ankit",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ankitkamboj0/react-pro/issues"
   },
-  "homepage": "https://github.com/ankitkamboj0/react-pro#readme",
+  "homepage": "https://ankitkamboj0.github.io/react-pro#redme",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -34,6 +36,7 @@
     "@babel/preset-react": "^7.18.6",
     "@parcel/transformer-sass": "^2.8.3",
     "autoprefix": "^1.0.1",
+    "gh-pages": "^5.0.0",
     "parcel": "^2.8.3",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",

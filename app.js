@@ -5,7 +5,7 @@ import Home from "components/Home";
 import About from "components/About";
 import ErrorPage from "components/ErrorPage";
 import "./index.scss";
-import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
+import { createHashRouter,RouterProvider,Outlet } from "react-router-dom";
 import Shimmer from "components/Shimmer";
 const Contact = lazy(()=>import("components/Contact"))
 const CardDetail = lazy(()=> import("components/CardDetail"))
@@ -20,7 +20,7 @@ const AppLayout = ()=>{
         </>
     )
 }
-const appRouter = createBrowserRouter([{
+const appRouter = createHashRouter([{
     path:"/",
     element: <AppLayout />,
     errorElement:<ErrorPage/>,
