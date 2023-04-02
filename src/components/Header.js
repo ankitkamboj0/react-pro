@@ -1,12 +1,18 @@
-import {useContext} from "react"
+import {useContext, useState} from "react"
 import { Link } from 'react-router-dom';
-import {UserContext} from 'utils/userContext';
+import UserContext from 'utils/userContext';
 
 
 const Header = () => {
-  const {user} = useContext(UserContext);
+  const {user,setUser} = useContext(UserContext);
+  const changeUser = (val)=>{
+    setUser({
+      name:val
+    })
+  }
   return (
     <div className="space-between header flex">
+      <input value={user.name}  onInput={e => changeUser(e.target.value)} />
       <div className='w-[300px] logo'>
         <img  src="https://img.freepik.com/free-vector/www-icon_23-2147934922.jpg?size=338&ext=jpg" />
       </div>

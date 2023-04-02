@@ -1,8 +1,11 @@
 import { createContext } from 'react'
 
-export const UserContext = createContext({
+const UserContext = createContext({
     user:{
-        name:"Dummy name",
+        name:"a ssss",
         email:"test@gmail.com"
     }
 })
+
+UserContext.displayName="UserContext";
+export default UserContext;

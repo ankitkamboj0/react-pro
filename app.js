@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import ReactDOM  from "react-dom/client";
 import Header from "components/Header";
 import Home from "components/Home";
@@ -9,15 +9,21 @@ import { createHashRouter,RouterProvider,Outlet } from "react-router-dom";
 import Shimmer from "components/Shimmer";
 const Contact = lazy(()=>import("components/Contact"))
 const CardDetail = lazy(()=> import("components/CardDetail"))
-
+import  UserContext  from "utils/userContext";
 const AppLayout = ()=>{
+    const [user,setUser] = useState({
+        name:"test user"
+    })
     return (
-        <>
+        <UserContext.Provider value={{
+                user:user,
+                setUser:setUser
+            }}>
             <Header />
             <div className="p20">
                 <Outlet />
             </div>
-        </>
+        </UserContext.Provider>
     )
 }
 const appRouter = createHashRouter([{
